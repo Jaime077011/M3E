@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>M3E Fitness & Coaching</title>
+<meta name="description" content="M3E Fitness & Coaching: 90-day training and nutrition coaching with daily tracking.">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<style>
+/* Gym-floor black, one hot red, white. Heavy italic display type, two-tone titles, red-framed panels. Dark only, on purpose. */
+:root{
+  --bg:#0A0A0B; --bg-2:#111113; --surface:#151517; --line:#26262A; --line-strong:#3A3A40;
+  --ink:#F4F4F2; --muted:#A1A1A7; --brand:#E31B23; --brand-deep:#9E0F15; --brand-soft:#2A0B0D;
+  --f-display:'Poppins','Cairo',Arial,sans-serif;
+  --f-body:'Cairo','Poppins','Segoe UI',Tahoma,sans-serif;
+  --f-brush:'Permanent Marker','Poppins',cursive;
+  --wrap:1180px; --r:18px; --r-btn:999px; --r-card:22px;
+  --brand-rgb:227,27,35; --brand-hi:#ff2a32; --brand-tint:#ffb3b5; --disp-style:italic;
+  --logo:none;
+  --bg:#070B16; --bg-2:#0C1222; --surface:#111A2E; --line:#1E2A42; --line-strong:#2E3D5C;
+  --ink:#F4EFE6; --muted:#9AA3B5; --brand:#FF5A1F; --brand-deep:#B83A0E; --brand-soft:#2A160E;
+  --brand-rgb:255,90,31; --brand-hi:#FF7440; --brand-tint:#FFC2A8; --disp-style:normal;
+  --f-display:'Big Shoulders Display','IBM Plex Sans Arabic',Impact,sans-serif;
+  --f-body:'IBM Plex Sans Arabic','Segoe UI',Tahoma,sans-serif;
+  --f-brush:'Big Shoulders Display',Impact,sans-serif;
+  --r:10px; --r-btn:8px; --r-card:12px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.7;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:20px}
+.en{direction:ltr;unicode-bidi:isolate}
+
+/* watermark */
+.wm{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.045;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20600%20300%27%3E%3Ctext%20x%3D%27300%27%20y%3D%27230%27%20text-anchor%3D%27middle%27%20font-family%3D%27Impact%2CArial%20Narrow%2Csans-serif%27%20font-weight%3D%27900%27%20font-size%3D%27250%27%20fill%3D%27none%27%20stroke%3D%27%23FF5A1F%27%20stroke-width%3D%274%27%3EM3E%3C/text%3E%3C/svg%3E") 50% 55%/min(1100px,140vw) auto no-repeat}
+main,header,footer{position:relative;z-index:1}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;direction:ltr}
+.brand .mark{width:28px;height:52px;background:var(--logo) center/contain no-repeat;flex:none}
+.brand .word{display:grid;line-height:1.05;text-align:left}
+.brand .word b{font-family:var(--f-display);font-weight:900;font-style:var(--disp-style);font-size:22px;letter-spacing:-.01em}
+.brand .word b i{color:var(--brand);font-style:var(--disp-style)}
+.brand .word small{font-family:var(--f-display);font-weight:700;font-style:var(--disp-style);font-size:10px;letter-spacing:.18em;color:var(--muted)}
+.links{display:flex;gap:22px;font-weight:700;font-size:15px}
+.links a{text-decoration:none;color:var(--muted)}
+.links a:hover{color:var(--ink)}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:800;font-size:16px;border-radius:var(--r-btn);padding:12px 22px;border:2px solid transparent;cursor:pointer;transition:transform .15s,background .15s,border-color .15s;white-space:nowrap}
+.btn:hover{transform:translateY(-1px)}
+.btn.red{background:var(--brand);color:#fff;box-shadow:0 10px 30px -10px rgba(var(--brand-rgb),.7)}
+.btn.red:hover{background:var(--brand-hi)}
+.btn.line{border-color:var(--line-strong);color:var(--ink)}
+.btn.line:hover{border-color:var(--ink)}
+.btn.sm{padding:9px 16px;font-size:14px}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* ---------- headings ---------- */
+.eyebrow,.h2,.big,.brush,.fact b,.pack .en,.price b{unicode-bidi:isolate}
+.eyebrow{font-family:var(--f-display);font-weight:800;font-style:var(--disp-style);font-size:13px;letter-spacing:.2em;color:var(--brand);direction:ltr;text-transform:uppercase}
+.h2{margin:6px 0 10px;font-family:var(--f-display);font-weight:800;font-size:clamp(30px,4.4vw,48px);line-height:1.05;text-transform:uppercase;direction:ltr;text-wrap:balance}
+.h2 i{font-style:normal;color:var(--brand)}
+.lead{color:var(--muted);max-width:60ch;margin:0;font-size:17px}
+.sec{padding-block:96px}
+.sec-head{display:grid;gap:4px;margin-bottom:40px;justify-items:start}
+.sec-head.center{justify-items:center;text-align:center}
+.sec-head.center .lead{margin-inline:auto}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(700px 460px at 28% 40%,rgba(var(--brand-rgb),.30),transparent 70%),
+  radial-gradient(500px 300px at 10% 100%,rgba(var(--brand-rgb),.12),transparent 70%),var(--bg)}
+.hero-in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:24px;align-items:end;padding-block:56px 0}
+.hero-text{padding-bottom:72px;display:grid;gap:18px;align-content:start}
+.big{margin:0;font-family:var(--f-display);font-weight:900;font-style:var(--disp-style);line-height:.9;letter-spacing:-.02em;direction:ltr;text-align:left;font-size:clamp(54px,9vw,112px);text-transform:uppercase}
+.big span{display:block}
+.big.long{font-size:clamp(44px,6vw,78px)}
+.big span+span{color:var(--brand)}
+.brush{font-family:var(--f-brush);font-size:clamp(20px,2.6vw,30px);line-height:1.2;direction:ltr;text-align:left;color:var(--ink)}
+.brush em{color:var(--brand);font-style:normal}
+.hero h2{margin:0;font-size:clamp(24px,3vw,34px);font-weight:900;line-height:1.3}
+.hero p{margin:0;color:var(--muted);font-size:18px;max-width:46ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.hero-art{position:relative;overflow:hidden;align-self:stretch;display:flex;align-items:flex-end;justify-content:center;min-height:420px}
+.hero-art img{width:100%;max-width:560px;height:auto}
+.type-art{position:relative;width:100%;max-width:520px;aspect-ratio:1/1.05;display:grid;place-items:center;margin-bottom:56px}
+.type-art .ring{position:absolute;inset:6%;border-radius:50%;border:2px solid rgba(var(--brand-rgb),.5);box-shadow:0 0 80px rgba(var(--brand-rgb),.35),inset 0 0 80px rgba(var(--brand-rgb),.2)}
+.type-art .ring.b{inset:18%;border-color:rgba(255,255,255,.08);box-shadow:none}
+.type-art b{position:relative;font-family:var(--f-display);font-weight:900;font-style:var(--disp-style);font-size:clamp(84px,12vw,160px);line-height:.8;letter-spacing:-.04em;direction:ltr}
+.type-art b i{color:var(--brand)}
+.type-art small{position:absolute;bottom:20%;font-family:var(--f-display);font-weight:800;font-style:var(--disp-style);letter-spacing:.3em;font-size:14px;color:var(--muted);direction:ltr}
+.facts{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);background:rgba(0,0,0,.6)}
+.fact{padding:22px 20px;display:grid;gap:2px;border-inline-start:1px solid var(--line)}
+.fact:first-child{border-inline-start:0}
+.fact b{font-family:var(--f-display);font-weight:900;font-style:var(--disp-style);font-size:34px;line-height:1;direction:ltr;text-align:right}
+.fact b i{color:var(--brand);font-style:var(--disp-style)}
+.fact span{color:var(--muted);font-size:14px;font-weight:600}
+
+/* ---------- steps ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.step{position:relative;padding:28px 24px 26px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.step .n{position:absolute;top:-14px;inset-inline-end:14px;font-family:var(--f-display);font-weight:900;font-style:var(--disp-style);font-size:110px;line-height:1;color:transparent;-webkit-text-stroke:2px rgba(var(--brand-rgb),.55)}
+.step h3{position:relative;margin:24px 0 6px;font-size:22px;font-weight:900}
+.step p{position:relative;margin:0;color:var(--muted)}
+
+/* ---------- packages ---------- */
+.pk-wrap{background:linear-gradient(180deg,var(--bg) 0,var(--bg-2) 30%,var(--bg-2) 70%,var(--bg) 100%)}
+.packs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+.pack{position:relative;display:flex;flex-direction:column;gap:18px;padding:30px 26px 26px;background:#000;border:2px solid var(--line-strong);border-radius:var(--r-card)}
+.pack.hot{border-color:var(--brand);box-shadow:0 30px 80px -30px rgba(var(--brand-rgb),.6);background:linear-gradient(180deg,#160406 0,#000 45%)}
+.pack .tag{position:absolute;top:-14px;inset-inline-start:22px;background:var(--brand);color:#fff;font-weight:800;font-size:13px;padding:3px 14px;border-radius:999px}
+.pack .en{font-family:var(--f-display);font-weight:900;font-style:var(--disp-style);font-size:26px;line-height:1.05;text-transform:uppercase;text-align:right}
+.pack .en i{color:var(--brand);font-style:var(--disp-style)}
+.pack h3{margin:-12px 0 0;font-size:18px;font-weight:800;color:var(--muted)}
+.price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;padding-block:14px;border-block:1px solid var(--line)}
+.price b{font-family:var(--f-display);font-weight:900;font-style:var(--disp-style);font-size:40px;line-height:1;direction:ltr}
+.price span{color:var(--muted);font-size:14px;font-weight:600}
+.price.ask b{font-family:var(--f-body);font-style:normal;font-size:20px;font-weight:800}
+.feat{list-style:none;margin:0;padding:0;display:grid;gap:10px;flex:1}
+.feat li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start;font-weight:600}
+.feat li::before{content:"";width:22px;height:22px;margin-top:3px;border-radius:50%;background:var(--brand-soft) center/12px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5l2.5 2.5L10 3.5' fill='none' stroke='%23FF5A1F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");border:1px solid rgba(var(--brand-rgb),.4)}
+.pack .btn{width:100%}
+
+/* ---------- transformations ---------- */
+.tf{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.ba{display:grid;gap:12px}
+.ba-frame{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:var(--surface);border:2px solid var(--line-strong);user-select:none;touch-action:pan-y}
+.ba-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba-frame .before{clip-path:inset(0 calc(100% - var(--x,50%)) 0 0)}
+.ba-frame .bar{position:absolute;top:0;bottom:0;left:var(--x,50%);width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.3)}
+.ba-frame .knob{position:absolute;top:50%;left:var(--x,50%);width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;background:var(--brand);border:3px solid #fff;display:grid;place-items:center;color:#fff;font-weight:900;font-size:14px;pointer-events:none}
+.ba-frame input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.lbl{position:absolute;top:12px;z-index:2;font-family:var(--f-display);font-weight:800;font-style:var(--disp-style);font-size:12px;letter-spacing:.1em;padding:3px 10px;border-radius:6px;direction:ltr}
+.lbl.b{left:12px;background:#000;color:#fff}
+.lbl.a{right:12px;background:var(--brand);color:#fff}
+.ba-empty{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;direction:ltr}
+.ba-empty div{display:grid;place-items:center;align-content:center;gap:6px;text-align:center;color:var(--muted);font-size:14px;font-weight:700;padding:16px}
+.ba-empty div+div{border-left:2px dashed var(--line-strong);background:rgba(var(--brand-rgb),.05)}
+.ba-empty svg{width:36px;height:36px;opacity:.5}
+.tf.side .ba-frame{aspect-ratio:4/3}
+.tf.side .lbl{top:auto;bottom:10px}
+.sbs{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;gap:3px;direction:ltr;background:var(--brand)}
+.sbs img{position:static;width:100%;height:100%;object-fit:cover}
+.ba-cap{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.ba-cap b{font-size:17px;font-weight:800}
+.ba-cap span{color:var(--brand);font-weight:800;font-family:var(--f-display);font-style:var(--disp-style);direction:ltr}
+
+/* ---------- about ---------- */
+.about{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:center}
+.about-img{position:relative;border-radius:24px;overflow:hidden;border:2px solid var(--brand);aspect-ratio:4/5;background:var(--surface)}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about-img::after{content:"";position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(transparent,rgba(0,0,0,.85))}
+.about-img .sig{position:absolute;z-index:2;bottom:18px;left:20px;right:20px;font-family:var(--f-brush);font-size:26px;line-height:1.1;direction:ltr;text-align:left}
+.about-img .sig em{display:block;color:var(--brand);font-style:normal;font-size:18px}
+.ph{position:absolute;inset:0;display:grid;place-items:center;align-content:center;gap:8px;color:var(--muted);font-weight:700;text-align:center;padding:20px}
+.ph svg{width:56px;height:56px;opacity:.4}
+.about-text{display:grid;gap:16px}
+.about-text p{margin:0;font-size:18px;color:#d6d6da}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line-strong);border-radius:999px;padding:6px 14px;font-weight:700;font-size:14px}
+.chip b{color:var(--brand)}
+
+/* ---------- faq ---------- */
+.faq{display:grid;gap:10px;max-width:820px;margin-inline:auto}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:4px 20px}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:14px;font-weight:800;font-size:17px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--f-display);font-weight:800;font-size:24px;color:var(--brand);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq p{margin:0 0 16px;color:var(--muted)}
+
+/* ---------- final cta ---------- */
+.final{position:relative;overflow:hidden;text-align:center;padding-block:110px;background:
+  radial-gradient(600px 300px at 50% 120%,rgba(var(--brand-rgb),.45),transparent 70%),#000;border-top:1px solid var(--line)}
+.final .big{text-align:center;font-size:clamp(48px,8vw,100px)}
+.final p{color:var(--muted);font-size:18px;margin:18px auto 26px}
+.final .cta-row{justify-content:center}
+.note{display:inline-block;margin-top:16px;border:1px dashed var(--brand);color:var(--brand-tint);border-radius:10px;padding:8px 14px;font-size:14px;font-weight:700}
+
+footer{border-top:1px solid var(--line);padding-block:28px calc(28px + env(safe-area-inset-bottom,0px));color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+
+/* floating whatsapp on phones */
+.fab{position:fixed;z-index:30;bottom:calc(16px + env(safe-area-inset-bottom,0px));left:16px;width:56px;height:56px;border-radius:50%;background:#25D366;display:none;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.fab svg{width:30px;height:30px}
+
+/* entrance */
+@keyframes rise{from{transform:translateY(18px);opacity:.001}to{transform:none;opacity:1}}
+.hero-text>*{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.hero-text>*:nth-child(2){animation-delay:.08s}.hero-text>*:nth-child(3){animation-delay:.16s}.hero-text>*:nth-child(4){animation-delay:.24s}.hero-text>*:nth-child(5){animation-delay:.32s}
+
+@media (max-width:980px){
+  .links{display:none}
+  .hero-in{grid-template-columns:minmax(0,1fr);padding-top:36px}
+  .hero-text{padding-bottom:0}
+  .hero-art{min-height:0}
+  .hero-art img{max-width:420px}
+  .type-art{max-width:340px;margin-bottom:24px}
+  .steps,.packs,.tf{grid-template-columns:minmax(0,1fr)}
+  .packs{gap:28px}
+  .about{grid-template-columns:minmax(0,1fr);gap:28px}
+  .about-img{max-width:440px}
+  .sec{padding-block:72px}
+}
+@media (max-width:640px){
+  .wrap{padding-inline:16px}
+  .facts{grid-template-columns:minmax(0,1fr)}
+  .fact{border-inline-start:0;border-top:1px solid var(--line);display:flex;align-items:baseline;gap:14px;padding:14px 16px}
+  .fact:first-child{border-top:0}
+  .fact b{font-size:26px;min-width:84px}
+  .nav .btn{display:none}
+  .fab{display:grid}
+  .brand .word b{font-size:19px}
+  .tf{gap:28px}
+}
+/* M3E: navy + blaze orange, tall condensed sport type, square corners */
+.nav{background:rgba(7,11,22,.85)}
+.eyebrow{font-family:'IBM Plex Mono',ui-monospace,monospace;font-weight:600;letter-spacing:.16em;font-size:12px}
+.big{font-weight:900;letter-spacing:.005em;line-height:.86;font-size:clamp(68px,11vw,148px)}
+.big.long{font-size:clamp(60px,8.6vw,118px)}
+.h2{font-weight:800;letter-spacing:.01em;font-size:clamp(40px,5.6vw,64px);line-height:.95}
+.brand .word b{font-size:30px;letter-spacing:.02em}
+.brand .word small{font-family:'IBM Plex Mono',monospace;font-weight:500;letter-spacing:.1em}
+.fact b{font-size:46px;font-weight:900}
+.step .n{font-size:140px;-webkit-text-stroke:2px rgba(var(--brand-rgb),.6);top:-22px}
+.step{border-top:3px solid var(--brand)}
+.pack .en{font-size:34px;font-weight:900;letter-spacing:.01em}
+.price b{font-size:52px}
+.pack.hot{background:linear-gradient(180deg,#24120A 0,#070B16 50%)}
+.pack{background:#0A1020}
+.type-art b{font-size:clamp(130px,17vw,220px);letter-spacing:0}
+.type-art .ring{border-radius:24px;inset:8%;transform:rotate(-6deg)}
+.type-art .ring.b{border-radius:24px;inset:16%;transform:rotate(4deg)}
+.lbl{font-family:'IBM Plex Mono',monospace;font-weight:600}
+.about-img{border-radius:14px}
+.faq details{border-radius:10px}
+.chip{border-radius:8px}
+.final{background:radial-gradient(600px 300px at 50% 120%,rgba(var(--brand-rgb),.4),transparent 70%),#050810}
+.hero{background:radial-gradient(700px 460px at 28% 40%,rgba(var(--brand-rgb),.22),transparent 70%),radial-gradient(520px 320px at 90% 0%,rgba(80,120,255,.12),transparent 70%),var(--bg)}
+</style>
+</head>
+<body>
+<div class="wm" aria-hidden="true"></div>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#top" id="brand"></a>
+  <nav class="links" aria-label="أقسام الصفحة"><a href="#packages">الباقات</a><a href="#results">النتايج</a><a href="#about">عن الكوتش</a><a href="#faq">أسئلة</a></nav>
+  <a class="btn red sm" id="nav-cta" href="#contact">ابدأ معانا</a>
+</div></header>
+
+<main id="top">
+  <section class="hero"><div class="wrap hero-in">
+    <div class="hero-text" id="hero-text"></div>
+    <div class="hero-art" id="hero-art"></div>
+  </div>
+  <div class="wrap" style="padding-inline:0"><div class="facts" id="facts"></div></div>
+  </section>
+
+  <section class="sec" id="how"><div class="wrap">
+    <div class="sec-head"><span class="eyebrow">How it works</span><h2 class="h2"><i>3</i> Steps</h2><p class="lead">من أول رسالة لحد ما تبدأ تشوف نتيجة.</p></div>
+    <div class="steps" id="steps"></div>
+  </div></section>
+
+  <section class="sec pk-wrap" id="packages"><div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">Packages</span><h2 class="h2"><i>Choose</i> Your Plan</h2><p class="lead">اختار الباقة اللي تناسب هدفك. كل الباقات فيها متابعة شخصية من الكوتش.</p></div>
+    <div class="packs" id="packs"></div>
+  </div></section>
+
+  <section class="sec" id="results"><div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Transformations</span><h2 class="h2"><i>Real</i> Results</h2><p class="lead" id="results-lead">اسحب الخط عشان تشوف قبل وبعد.</p></div>
+    <div class="tf" id="tf"></div>
+  </div></section>
+
+  <section class="sec" id="about" style="background:var(--bg-2)"><div class="wrap about">
+    <div class="about-img" id="about-img"></div>
+    <div class="about-text" id="about-text"></div>
+  </div></section>
+
+  <section class="sec" id="faq-sec"><div class="wrap">
+    <div class="sec-head center"><span class="eyebrow">FAQ</span><h2 class="h2"><i>Questions</i></h2></div>
+    <div class="faq" id="faq"></div>
+  </div></section>
+
+  <section class="final" id="contact"><div class="wrap" id="final"></div></section>
+</main>
+
+<footer><div class="wrap"><span id="foot"></span><span class="en">© <span id="yr"></span></span></div></footer>
+<a class="fab" id="fab" href="#contact" aria-label="كلمنا على واتساب"></a>
+
+<script>
+/* =====================================================================
+   EDIT HERE: all the page content lives in CONFIG.
+   - whatsapp: number with country code, no + or spaces (e.g. 2010xxxxxxx)
+   - price: leave '' to show "السعر عند التواصل"
+   - results: put image links (or data: images) in before/after
+   ===================================================================== */
+var CONFIG = {
+  "whatsapp": "201034907243",
+  "instagram": "",
+  "waMessage": "أهلا M3E، عايز أعرف تفاصيل الباقات",
+  "brand": {
+    "name": "M3E",
+    "logo": false,
+    "wordHtml": "M3<i>E<\/i>",
+    "sub": "FITNESS & COACHING"
+  },
+  "hero": {
+    "eyebrow": "M3E · Fitness & Coaching",
+    "l1": "Train. Track.",
+    "l2": "Transform.",
+    "brush": "<em>Coached by<\/em> Mohamed 3bdelaty",
+    "ar": "90 يوم يغيروا شكلك",
+    "sub": "خطة تمرين وتغذية مخصوصة ليك، ومتابعة يومية من الكوتش على صفحة خاصة بيك.",
+    "photo": "",
+    "artSub": "90 DAYS PROGRAM",
+    "long": true
+  },
+  "facts": [
+    {
+      "big": "90",
+      "small": "يوم برنامج متابعة"
+    },
+    {
+      "big": "1<i>:<\/i>1",
+      "small": "متابعة شخصية مع الكوتش"
+    },
+    {
+      "big": "PRs",
+      "small": "سجل أرقامك القياسية وشوف تقدمك"
+    }
+  ],
+  "steps": [
+    {
+      "t": "قول هدفك",
+      "d": "نزول دهون، زيادة عضل، أو لياقة. بنعرف مستواك ومواعيدك والأكل اللي بتحبه."
+    },
+    {
+      "t": "خطتك جاهزة",
+      "d": "خطة تمرين بالمجموعات والراحة، وخطة تغذية بالجرامات وبدائل لكل وجبة."
+    },
+    {
+      "t": "تابع كل يوم",
+      "d": "صفحة خاصة بيك تسجل فيها حضورك ودايتك ونومك ووزنك وأرقامك، والكوتش بيتابعك منها."
+    }
+  ],
+  "packages": [
+    {
+      "en": "<i>Training<\/i> Plan",
+      "name": "خطة تمرين",
+      "price": "",
+      "per": "",
+      "features": [
+        "خطة تمرين أسبوعية",
+        "لينك فيديو لكل تمرين",
+        "مجموعات وراحة وصعوبة الأداء",
+        "سجل الأرقام القياسية"
+      ]
+    },
+    {
+      "en": "Full <i>Coaching<\/i>",
+      "name": "متابعة كاملة",
+      "tag": "الأكثر شمولًا",
+      "featured": true,
+      "price": "",
+      "per": "",
+      "features": [
+        "خطة تمرين + خطة تغذية",
+        "صفحة متابعة يومية خاصة بيك",
+        "تشيك إن شهري بالوزن والصور",
+        "سجل الأرقام القياسية",
+        "متابعة على الواتساب"
+      ]
+    },
+    {
+      "en": "<i>Nutrition<\/i> Plan",
+      "name": "خطة تغذية",
+      "price": "",
+      "per": "",
+      "features": [
+        "أهداف السعرات والماكروز",
+        "4 وجبات بالجرامات",
+        "بدائل لكل مجموعة أكل",
+        "تعديل الخطة كل شهر"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "name": "",
+      "result": "",
+      "before": "img/tf1-before.webp",
+      "after": "img/tf1-after.webp"
+    },
+    {
+      "name": "",
+      "result": "",
+      "before": "img/tf2-before.webp",
+      "after": "img/tf2-after.webp"
+    },
+    {
+      "name": "",
+      "result": "",
+      "before": "img/tf3-before.webp",
+      "after": "img/tf3-after.webp"
+    },
+    {
+      "name": "",
+      "result": "",
+      "before": "img/tf6-before.webp",
+      "after": "img/tf6-after.webp"
+    },
+    {
+      "name": "",
+      "result": "",
+      "before": "img/tf7-before.webp",
+      "after": "img/tf7-after.webp"
+    },
+    {
+      "name": "",
+      "result": "",
+      "before": "img/tf8-before.webp",
+      "after": "img/tf8-after.webp"
+    },
+    {
+      "name": "",
+      "result": "",
+      "before": "img/tf9-before.webp",
+      "after": "img/tf9-after.webp"
+    },
+    {
+      "name": "",
+      "result": "",
+      "before": "img/tf10-before.webp",
+      "after": "img/tf10-after.webp"
+    },
+    {
+      "name": "",
+      "result": "",
+      "before": "img/tf13-before.webp",
+      "after": "img/tf13-after.webp"
+    }
+  ],
+  "resultsMode": "side",
+  "resultsLead": "نتايج حقيقية لعملاء M3E. الوشوش متغطية عشان خصوصيتهم.",
+  "resultsEmptyLead": "",
+  "about": {
+    "eyebrow": "About",
+    "title": "About <i>M3E<\/i>",
+    "photo": "img/coach.webp",
+    "photoAlt": "الكوتش محمد عبد العاطي",
+    "sig": "<em>Coach<\/em>Mohamed 3bdelaty",
+    "paras": [
+      "M3E Fitness & Coaching مع الكوتش محمد عبد العاطي. متابعة تمرين وتغذية مخصوصة، مبنية على برنامج 90 يوم.",
+      "كل يوم بتسجل حضورك ودايتك ونومك، وكل شهر تشيك إن بالوزن والصور، والكوتش بيعدل خطتك على حسب تقدمك."
+    ],
+    "chips": [
+      "<b>90<\/b> يوم برنامج",
+      "تمرين <b>+<\/b> تغذية",
+      "متابعة <b>يومية<\/b>"
+    ]
+  },
+  "faq": [
+    {
+      "q": "المتابعة أونلاين ازاي؟",
+      "a": "بتاخد لينك لصفحة خاصة بيك فيها خطتك. كل يوم بتسجل يومك، والكوتش بيتابعك منها ويعدل الخطة."
+    },
+    {
+      "q": "لازم أكون في جيم؟",
+      "a": "الخطة بتتعمل على حسب المكان اللي هتتمرن فيه والأدوات اللي عندك."
+    },
+    {
+      "q": "ينفع آخد خطة تغذية بس؟",
+      "a": "أيوه، فيه باقة خطة تغذية لوحدها، وفيه باقة تمرين لوحدها."
+    },
+    {
+      "q": "أشترك ازاي؟",
+      "a": "ابعت رسالة على الواتساب وقول هدفك، والكوتش هيرد عليك بالباقة المناسبة."
+    }
+  ],
+  "final": {
+    "eyebrow": "Ready?",
+    "l1": "Start your",
+    "l2": "90 days",
+    "sub": "ابعت رسالة وقول هدفك، والكوتش هيرد عليك بالباقة المناسبة."
+  },
+  "footer": "M3E Fitness & Coaching · Coach Mohamed 3bdelaty"
+};
+</script>
+<script>
+(function(){
+'use strict';
+var C=CONFIG;
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function $(id){return document.getElementById(id);}
+var WA_ICON='<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>';
+var CAM='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h3l2-2h6l2 2h3v12H4z"/><circle cx="12" cy="13" r="3.5"/></svg>';
+function wa(msg){
+  if(!C.whatsapp)return '#contact';
+  return 'https://wa.me/'+String(C.whatsapp).replace(/\D/g,'')+'?text='+encodeURIComponent(msg||C.waMessage||'');
+}
+function two(a,b){return '<i>'+esc(a)+'</i> '+esc(b);}
+
+// brand
+$('brand').innerHTML=(C.brand.logo?'<span class="mark" role="img" aria-label="'+esc(C.brand.name)+'"></span>':'')+
+  '<span class="word"><b>'+C.brand.wordHtml+'</b><small>'+esc(C.brand.sub)+'</small></span>';
+$('nav-cta').href=wa();if(C.whatsapp){$('nav-cta').target='_blank';$('nav-cta').rel='noopener';}
+
+// hero
+var H=C.hero;
+$('hero-text').innerHTML=
+  '<span class="eyebrow">'+esc(H.eyebrow)+'</span>'+
+  '<h1 class="big'+(H.long?' long':'')+'"><span>'+esc(H.l1)+'</span><span>'+esc(H.l2)+'</span></h1>'+
+  (H.brush?'<div class="brush">'+H.brush+'</div>':'')+
+  '<div><h2>'+esc(H.ar)+'</h2><p>'+esc(H.sub)+'</p></div>'+
+  '<div class="cta-row"><a class="btn red" href="#packages">شوف الباقات</a><a class="btn line" href="'+wa()+'"'+(C.whatsapp?' target="_blank" rel="noopener"':'')+'>'+WA_ICON+'كلمنا واتساب</a></div>';
+$('hero-art').innerHTML=H.photo?'<img src="'+H.photo+'" alt="'+esc(H.photoAlt||'')+'" width="923" height="1100">':
+  '<div class="type-art" aria-hidden="true"><div class="ring"></div><div class="ring b"></div><b>'+C.brand.wordHtml+'</b><small>'+esc(H.artSub||'')+'</small></div>';
+$('facts').innerHTML=C.facts.map(function(f){return '<div class="fact"><b>'+f.big+'</b><span>'+esc(f.small)+'</span></div>';}).join('');
+
+// steps
+$('steps').innerHTML=C.steps.map(function(s,i){return '<div class="step"><span class="n" aria-hidden="true">'+(i+1)+'</span><h3>'+esc(s.t)+'</h3><p>'+esc(s.d)+'</p></div>';}).join('');
+
+// packages
+$('packs').innerHTML=C.packages.map(function(p){
+  return '<article class="pack'+(p.featured?' hot':'')+'">'+(p.tag?'<span class="tag">'+esc(p.tag)+'</span>':'')+
+    '<div class="en">'+p.en+'</div><h3>'+esc(p.name)+'</h3>'+
+    (p.price?'<div class="price"><b>'+esc(p.price)+'</b><span>'+esc(p.per||'')+'</span></div>':'<div class="price ask"><b>السعر عند التواصل</b><span>'+esc(p.per||'')+'</span></div>')+
+    '<ul class="feat">'+p.features.map(function(f){return '<li>'+esc(f)+'</li>';}).join('')+'</ul>'+
+    '<a class="btn '+(p.featured?'red':'line')+'" href="'+wa('أهلا، عايز أشترك في باقة '+p.name)+'"'+(C.whatsapp?' target="_blank" rel="noopener"':'')+'>اشترك في الباقة</a></article>';
+}).join('');
+
+// transformations
+var anyPhoto=C.results.some(function(r){return r.before&&r.after;});
+if(!anyPhoto&&C.resultsEmptyLead)$('results-lead').textContent=C.resultsEmptyLead;
+if(anyPhoto&&C.resultsMode==='side')$('results-lead').textContent=C.resultsLead||'صور قبل وبعد من عملاء حقيقيين.';
+if(C.resultsMode==='side')$('tf').classList.add('side');
+$('tf').innerHTML=C.results.map(function(r,i){
+  var frame=(r.before&&r.after&&C.resultsMode==='side')?
+    '<div class="sbs"><img src="'+esc(r.before)+'" alt="قبل" loading="lazy"><img src="'+esc(r.after)+'" alt="بعد" loading="lazy"></div><span class="lbl b">BEFORE</span><span class="lbl a">AFTER</span>'
+    :(r.before&&r.after)?
+    '<img src="'+esc(r.after)+'" alt="بعد" loading="lazy"><img class="before" src="'+esc(r.before)+'" alt="قبل" loading="lazy">'+
+    '<span class="lbl b">BEFORE</span><span class="lbl a">AFTER</span><span class="bar"></span><span class="knob">↔</span>'+
+    '<input type="range" min="0" max="100" value="50" aria-label="قارن قبل وبعد" id="ba-'+i+'">'
+    :'<div class="ba-empty"><div>'+CAM+'صورة قبل</div><div>'+CAM+'صورة بعد</div></div><span class="lbl b">BEFORE</span><span class="lbl a">AFTER</span>';
+  var has=r.before&&r.after, cap=(r.name||r.result||!has)?'<figcaption class="ba-cap"><b>'+esc(r.name||(has?'':'اسم العميل'))+'</b><span>'+esc(r.result||'')+'</span></figcaption>':'';
+  return '<figure class="ba" style="margin:0"><div class="ba-frame">'+frame+'</div>'+cap+'</figure>';
+}).join('');
+document.querySelectorAll('.ba-frame input').forEach(function(inp){
+  inp.addEventListener('input',function(){inp.parentNode.style.setProperty('--x',inp.value+'%');});
+});
+
+// about
+var A=C.about;
+$('about-img').innerHTML=A.photo?'<img src="'+A.photo+'" alt="'+esc(A.photoAlt||'')+'" loading="lazy" width="644" height="1000">'+(A.sig?'<div class="sig">'+A.sig+'</div>':''):
+  '<div class="ph">'+CAM+'<span>'+esc(A.photoHint||'صورة الكوتش هنا')+'</span></div>';
+$('about-text').innerHTML='<span class="eyebrow">'+esc(A.eyebrow)+'</span><h2 class="h2" style="margin:0">'+A.title+'</h2>'+
+  A.paras.map(function(p){return '<p>'+esc(p)+'</p>';}).join('')+
+  (A.chips?'<div class="chips">'+A.chips.map(function(c){return '<span class="chip">'+c+'</span>';}).join('')+'</div>':'')+
+  '<div class="cta-row"><a class="btn red" href="'+wa()+'"'+(C.whatsapp?' target="_blank" rel="noopener"':'')+'>'+WA_ICON+'احجز مكالمة تعارف</a></div>';
+
+// faq
+$('faq').innerHTML=C.faq.map(function(f,i){return '<details'+(i===0?' open':'')+'><summary>'+esc(f.q)+'</summary><p>'+esc(f.a)+'</p></details>';}).join('');
+
+// final
+$('final').innerHTML='<span class="eyebrow">'+esc(C.final.eyebrow)+'</span><h2 class="big"><span>'+esc(C.final.l1)+'</span><span>'+esc(C.final.l2)+'</span></h2>'+
+  '<p>'+esc(C.final.sub)+'</p><div class="cta-row"><a class="btn red" href="'+wa()+'"'+(C.whatsapp?' target="_blank" rel="noopener"':'')+'>'+WA_ICON+'ابعت رسالة على واتساب</a>'+
+  (C.instagram?'<a class="btn line" href="'+esc(C.instagram)+'" target="_blank" rel="noopener">انستجرام</a>':'')+'</div>'+
+  (C.whatsapp?'':'<div class="note">ضيف رقم الواتساب في CONFIG.whatsapp عشان الأزرار تفتح المحادثة</div>');
+$('fab').innerHTML=WA_ICON.replace('fill="currentColor"','fill="#fff"');$('fab').href=wa();if(C.whatsapp){$('fab').target='_blank';$('fab').rel='noopener';}
+$('foot').textContent=C.footer;$('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
