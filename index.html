@@ -297,7 +297,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
 </main>
 
 <footer><div class="wrap"><span id="foot"></span><span class="en">© <span id="yr"></span></span></div></footer>
-<a class="fab" id="fab" href="#contact" aria-label="كلمنا على واتساب"></a>
+<a class="fab" id="fab" href="#contact" aria-label="كلمني على واتساب"></a>
 
 <script>
 /* =====================================================================
@@ -321,8 +321,10 @@ var CONFIG = {
     "l1": "Train. Track.",
     "l2": "Transform.",
     "brush": "<em>Coached by<\/em> Mohamed 3bdelaty",
-    "ar": "90 يوم يغيروا شكلك",
-    "sub": "خطة تمرين وتغذية مخصوصة ليك، ومتابعة يومية من الكوتش على صفحة خاصة بيك.",
+    "ar": "90 يوم هيغيروا شكل حياتك",
+    "sub": "خطة تمرين وتغذية معمولين عشانك، ومتابعة يومية مني شخصياً على صفحة خاصة بيك.",
+    "ctaPackages": "اختار الباقة المناسبة لك",
+    "ctaWhatsapp": "كلمني واتساب",
     "photo": "img/coach.webp",
     "photoAlt": "الكوتش محمد عبد العاطي",
     "artSub": "90 DAYS PROGRAM",
@@ -345,15 +347,15 @@ var CONFIG = {
   "steps": [
     {
       "t": "قول هدفك",
-      "d": "نزول دهون، زيادة عضل، أو لياقة. بنعرف مستواك ومواعيدك والأكل اللي بتحبه."
+      "d": "عايز تنزل دهون، تبني عضل، أو تعلي لياقتك؟ بعرف مستواك الحالي، ظروف يومك ومواعيدك، والأكل اللي بتحبه عشان نعمل نظام يناسبك أنت."
     },
     {
       "t": "خطتك جاهزة",
-      "d": "خطة تمرين بالمجموعات والراحة، وخطة تغذية بالجرامات وبدائل لكل وجبة."
+      "d": "بتستلم خطة تمرين متفصلة بالمجموعات والراحة وكل حاجة هتحتاجها، وخطة تغذية دقيقة بالجرامات مع بدائل لكل وجبة عشان متزهقش."
     },
     {
-      "t": "تابع كل يوم",
-      "d": "صفحة خاصة بيك تسجل فيها حضورك ودايتك ونومك ووزنك وأرقامك، والكوتش بيتابعك منها."
+      "t": "متابعة يومية خطوة بخطوة",
+      "d": "صفحتك الخاصة اللي هنسجل فيها كل حاجة: حضورك، دايتك، نومك، ووزنك. أنا معاك يوم بيوم بتابع أرقامك وتطورك، وبنظبط خطتك أول بأول لحد ما نوصل لهدفك."
     }
   ],
   "packages": [
@@ -451,6 +453,30 @@ var CONFIG = {
       "result": "",
       "before": "img/tf13-before.webp",
       "after": "img/tf13-after.webp"
+    },
+    {
+      "name": "",
+      "result": "",
+      "before": "img/tf14-before.webp",
+      "after": "img/tf14-after.webp"
+    },
+    {
+      "name": "",
+      "result": "",
+      "before": "img/tf15-before.webp",
+      "after": "img/tf15-after.webp"
+    },
+    {
+      "name": "",
+      "result": "",
+      "before": "img/tf16-before.webp",
+      "after": "img/tf16-after.webp"
+    },
+    {
+      "name": "",
+      "result": "",
+      "before": "img/tf17-before.webp",
+      "after": "img/tf17-after.webp"
     }
   ],
   "resultsMode": "side",
@@ -463,8 +489,8 @@ var CONFIG = {
     "photoAlt": "الكوتش محمد عبد العاطي",
     "sig": "<em>Coach<\/em>Mohamed 3bdelaty",
     "paras": [
-      "M3E Fitness & Coaching مع الكوتش محمد عبد العاطي. متابعة تمرين وتغذية مخصوصة، مبنية على برنامج 90 يوم.",
-      "كل يوم بتسجل حضورك ودايتك ونومك، وكل شهر تشيك إن بالوزن والصور، والكوتش بيعدل خطتك على حسب تقدمك."
+      "معاك الكوتش محمد عبد العاطي. النتيجة الحقيقية بتيجي من المتابعة، مش مجرد بلان بتتحط وخلاص.",
+      "في برنامج الـ 90 يوم، أنا معاك يومياً بتابع التزامك بالنوم، الأكل، وأداءك في التمرين. وفي التشيك إن الأسبوعي والشهري بنقيّم تطورك بالصور والوزن والقياسات عشان نضمن أحسن نتيجة."
     ],
     "chips": [
       "<b>90<\/b> يوم برنامج",
@@ -525,7 +551,7 @@ $('hero-text').innerHTML=
   '<h1 class="big'+(H.long?' long':'')+'"><span>'+esc(H.l1)+'</span><span>'+esc(H.l2)+'</span></h1>'+
   (H.brush?'<div class="brush">'+H.brush+'</div>':'')+
   '<div><h2>'+esc(H.ar)+'</h2><p>'+esc(H.sub)+'</p></div>'+
-  '<div class="cta-row"><a class="btn red" href="#packages">شوف الباقات</a><a class="btn line" href="'+wa()+'"'+(C.whatsapp?' target="_blank" rel="noopener"':'')+'>'+WA_ICON+'كلمنا واتساب</a></div>';
+  '<div class="cta-row"><a class="btn red" href="#packages">'+esc(H.ctaPackages||'شوف الباقات')+'</a><a class="btn line" href="'+wa()+'"'+(C.whatsapp?' target="_blank" rel="noopener"':'')+'>'+WA_ICON+esc(H.ctaWhatsapp||'كلمنا واتساب')+'</a></div>';
 $('hero-art').innerHTML=H.photo?'<img src="'+H.photo+'" alt="'+esc(H.photoAlt||'')+'" width="923" height="1100">':
   '<div class="type-art" aria-hidden="true"><div class="ring"></div><div class="ring b"></div><b>'+C.brand.wordHtml+'</b><small>'+esc(H.artSub||'')+'</small></div>';
 $('facts').innerHTML=C.facts.map(function(f){return '<div class="fact"><b>'+f.big+'</b><span>'+esc(f.small)+'</span></div>';}).join('');
